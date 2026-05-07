@@ -1,5 +1,17 @@
 import "./App.css";
 
+<<<<<<< Updated upstream
+=======
+// Importación de Imágenes
+import repuestosImg from "./assets/repuestos.png";
+import accesoriosImg from "./assets/accesorios.png";
+import personalizadasImg from "./assets/personalizadas.png";
+
+// Importación de Componentes
+import Header from "./components/Header";
+import ProductCard from "./components/ProductCard";
+
+>>>>>>> Stashed changes
 function App() {
   const categories = [
     {
@@ -65,6 +77,7 @@ function App() {
           CrazyPrint<span>3D</span>
         </a>
 
+<<<<<<< Updated upstream
         <nav className="nav">
           <a href="#productos">Productos</a>
           <a href="#servicios">Servicios</a>
@@ -208,6 +221,77 @@ function App() {
         <span>Repuestos, accesorios y soluciones técnicas impresas en 3D.</span>
       </footer>
     </main>
+=======
+      <div className="site-shell">
+        <Header />
+
+        <main className="content-wrapper">
+          {/* SECCIÓN HERO */}
+          <section className="hero reveal" id="inicio">
+            <div className="hero-panel">
+              <div className="hero-content">
+                <h1>CRAZYPRINT 3D</h1>
+                <p>PIEZAS FUNCIONALES, REPUESTOS Y PROTOTIPOS FABRICADOS A MEDIDA.</p>
+              </div>
+              <div className="hero-decor decor-one"></div>
+              <div className="hero-decor decor-two"></div>
+            </div>
+            <div className="hero-bottom"></div>
+          </section>
+
+          {/* SECCIÓN INFO */}
+          <section className="section-card reveal" id="info">
+            <div className="section-title"><h2>INFO</h2></div>
+            <div className="info-content">
+              <h3>¿Qué es CrazyPrint3D?</h3>
+              <p>CrazyPrint3D es una tienda online enfocada en soluciones técnicas impresas en 3D.</p>
+              <p>Ofrecemos repuestos, accesorios funcionales y piezas personalizadas.</p>
+            </div>
+          </section>
+
+          {/* SECCIÓN PRODUCTOS - Usando el componente reutilizable */}
+          <section className="section-card reveal" id="productos">
+            <div className="section-title"><h2>PRODUCTOS</h2></div>
+            <div className="products-grid">
+              <ProductCard 
+                image={repuestosImg} 
+                title1="Repuestos" 
+                title2="técnicos" 
+                alt="Repuestos técnicos" 
+              />
+              <ProductCard 
+                image={accesoriosImg} 
+                title1="Accesorios" 
+                title2="funcionales" 
+                alt="Accesorios funcionales" 
+              />
+              <ProductCard 
+                image={personalizadasImg} 
+                title1="Piezas" 
+                title2="personalizadas" 
+                alt="Piezas personalizadas" 
+              />
+            </div>
+          </section>
+
+          {/* SECCIÓN CONTACTO */}
+          <section className="contact-section reveal" id="contacto">
+            <div className="contact-footer">
+              <div className="contact-left">
+                <h2>Contacto</h2>
+                <p>Estamos disponibles para pedidos, consultas y presupuestos.</p>
+              </div>
+              <div className="contact-data">
+                <p>WhatsApp: +54 9 261 000 0000</p>
+                <p>Email: crazyprint3d@gmail.com</p>
+                <p>Ubicación: Mendoza, Argentina</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+>>>>>>> Stashed changes
   );
 }
 
