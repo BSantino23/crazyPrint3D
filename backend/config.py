@@ -1,17 +1,21 @@
 # backend/config.py
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ENV_PATH = os.path.join(BASE_DIR, ".env")
+
+load_dotenv(ENV_PATH)
+
+MYSQL_USER = os.getenv("MYSQL_USER")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
+MYSQL_HOST = os.getenv("MYSQL_HOST")
+MYSQL_PORT = os.getenv("MYSQL_PORT")
+MYSQL_DB = os.getenv("MYSQL_DB")
 
 class Config:
-    # Variables de entorno para MySQL
-    user = os.getenv('MYSQL_USER')
-    password = os.getenv('MYSQL_PASSWORD')
-    host = os.getenv('MYSQL_HOST')
-    database = os.getenv('MYSQL_DB')
-
-    # URI de conexión usando PyMySQL
-    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{user}:{password}@{host}/{database}"
+    SQLALCHEMY_DATABASE_URI = (
+        f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}"
+        f"@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DB}"
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = os.getenv('SECRET_KEY') or 'dev-key-123'
