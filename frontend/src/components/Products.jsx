@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; // 1. Importamos los Hooks
+import { useState, useEffect } from "react";
 import repuestosImg from "../assets/repuestos.png";
 import accesoriosImg from "../assets/accesorios.png";
 import personalizadasImg from "../assets/personalizadas.png";
